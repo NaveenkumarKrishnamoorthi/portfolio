@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Naveenkumar | Data Analyst & ML · Dark Blue Edition 2026</title>
   <!-- Google Fonts + Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     * {
       margin: 0;
@@ -22,7 +22,6 @@
       line-height: 1.5;
     }
 
-    /* deep dark blue theme with elegant accents */
     :root {
       --bg-deep: #0a0f1f;
       --bg-card: #0f172a;
@@ -33,7 +32,7 @@
       --border-dim: #1e293b;
       --text-muted: #94a3b8;
       --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-      --shadow-hover: 0 20px 35px -12px rgba(59,130,246,0.15);
+      --shadow-hover: 0 20px 35px -12px rgba(59, 130, 246, 0.15);
     }
 
     .container {
@@ -42,7 +41,7 @@
       padding: 0 2rem;
     }
 
-    /* glassmorphic dark header */
+    /* ----- header / nav ----- */
     header {
       position: sticky;
       top: 0;
@@ -97,7 +96,12 @@
       border-radius: 40px;
       font-weight: 600;
       transition: 0.2s;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .btn-primary:hover {
@@ -105,7 +109,7 @@
       transform: translateY(-2px);
     }
 
-    /* hero section */
+    /* ----- hero ----- */
     .hero {
       padding: 3rem 0 2rem;
     }
@@ -133,6 +137,13 @@
       font-weight: 600;
       color: #93c5fd;
       margin-bottom: 1rem;
+      animation: pulseGlow 3s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
+      50% { box-shadow: 0 0 12px 4px rgba(59, 130, 246, 0.3); }
+      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
     }
 
     .hero-content h1 {
@@ -202,6 +213,7 @@
       color: #94a3b8;
       transition: 0.2s;
       border: 1px solid #1e293b;
+      text-decoration: none;
     }
 
     .social-icons a:hover {
@@ -211,7 +223,7 @@
       border-color: #3b82f6;
     }
 
-    /* photo card dark */
+    /* photo card */
     .photo-card {
       flex: 0.8;
       background: #0f172a;
@@ -220,6 +232,12 @@
       text-align: center;
       box-shadow: var(--shadow);
       border: 1px solid #1e293b;
+      transition: 0.3s;
+    }
+
+    .photo-card:hover {
+      border-color: #3b82f6;
+      transform: scale(1.02);
     }
 
     .photo-frame {
@@ -229,7 +247,7 @@
       border-radius: 50%;
       background: linear-gradient(135deg, #1e293b, #0f172a);
       padding: 4px;
-      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
     }
 
     .profile-img {
@@ -238,6 +256,11 @@
       object-fit: cover;
       border-radius: 50%;
       border: 2px solid #3b82f6;
+      transition: 0.3s;
+    }
+
+    .profile-img:hover {
+      filter: brightness(1.1);
     }
 
     .photo-caption {
@@ -246,7 +269,7 @@
       color: #bfdbfe;
     }
 
-    /* sections dark theme */
+    /* sections */
     section {
       margin: 5rem 0;
     }
@@ -259,6 +282,7 @@
       display: inline-block;
       color: #e2e8f0;
     }
+
     .section-title:after {
       content: '';
       position: absolute;
@@ -268,6 +292,12 @@
       height: 3px;
       background: linear-gradient(90deg, #3b82f6, #38bdf8);
       border-radius: 4px;
+      animation: slideLine 0.7s ease-out;
+    }
+
+    @keyframes slideLine {
+      0% { width: 0; }
+      100% { width: 60%; }
     }
 
     .card-dark {
@@ -275,7 +305,7 @@
       border-radius: 1.8rem;
       padding: 1.8rem;
       border: 1px solid #1e293b;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
@@ -295,11 +325,18 @@
       margin: 0.25rem 0.5rem 0.25rem 0;
       color: #cbd5e6;
       border: 1px solid #334155;
+      transition: 0.2s;
     }
 
     .skill-chip i {
       margin-right: 5px;
       color: #60a5fa;
+    }
+
+    .skill-chip:hover {
+      background: #2563eb;
+      color: white;
+      border-color: #3b82f6;
     }
 
     .project-grid {
@@ -313,18 +350,61 @@
       border-radius: 1.5rem;
       padding: 1.5rem;
       border: 1px solid #1e293b;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3b82f6, #38bdf8);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
     }
 
     .project-card:hover {
       border-color: #3b82f6;
-      box-shadow: 0 12px 20px -12px rgba(59,130,246,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 24px -12px rgba(59, 130, 246, 0.25);
     }
 
     .project-icon {
       font-size: 2rem;
       color: #60a5fa;
       margin-bottom: 0.8rem;
+    }
+
+    .project-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-decoration: none;
+      background: #1e293b;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      border: 1px solid #334155;
+      transition: 0.2s;
+    }
+
+    .project-links a:hover {
+      background: #2563eb;
+      color: white;
+      border-color: #3b82f6;
     }
 
     .edu-flex {
@@ -349,6 +429,7 @@
       border-top: 1px solid #1e293b;
     }
 
+    /* responsive */
     @media (max-width: 780px) {
       .hero-content h1 {
         font-size: 2.2rem;
@@ -360,14 +441,30 @@
       .container {
         padding: 0 1.2rem;
       }
+      .nav-links {
+        gap: 1rem;
+      }
     }
+
+    /* tiny floating animation */
+    .float-soft {
+      animation: floatY 6s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="logo">NAVEENKUMAR &nbsp K<span style="color:#3b82f6;"></span></div>
+        <div class="logo">NAVEENKUMAR</div>
         <div class="nav-links">
           <a href="#home">Home</a>
           <a href="#projects">Work</a>
@@ -387,7 +484,7 @@
             <div class="hero-badge">
               <i class="fas fa-calendar-week"></i> M.Sc. Computer Science · 2026
             </div>
-            <h1> <span class="gradient-blue">Data  Analyst</span><br> shaping tomorrow’s insights</h1>
+            <h1><span class="gradient-blue">Data Analyst</span><br />shaping tomorrow’s insights</h1>
             <p class="hero-desc">I'm Naveenkumar — transforming raw data into intelligent decisions with Python, ML, and immersive dashboards. Ready to drive impact in 2026.</p>
             <div class="contact-info">
               <a href="mailto:nk.cspro@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i> nk.cspro@gmail.com</a>
@@ -400,10 +497,10 @@
               <a href="#"><i class="fas fa-globe"></i></a>
             </div>
           </div>
-          <!-- Photo card: replace with your actual image -->
-          <div class="photo-card">
+          <!-- Photo card -->
+          <div class="photo-card float-soft">
             <div class="photo-frame">
-              <img class="profile-img" id="profilePhoto" src="NK.webp" alt="Naveenkumar profile">
+              <img class="profile-img" id="profilePhoto" src="https://ui-avatars.com/api/?name=Naveen+K&size=220&background=0f172a&color=3b82f6&bold=true" alt="Naveenkumar profile" />
             </div>
             <div class="photo-caption">
               <i class="fas fa-camera-retro"></i>&nbsp; K. Naveenkumar
@@ -423,27 +520,36 @@
         </div>
       </section>
 
-      <!-- projects -->
+      <!-- projects (with real GitHub links from resume) -->
       <section id="projects">
         <h2 class="section-title">✨ Featured Projects</h2>
         <div class="project-grid">
           <div class="project-card">
-            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Sales Analytics Dashboard</h3>
-            <p>Built an interactive dashboard to analyze sales trends, product performance and revenue growth. Used Python, Pandas, Excel and Power BI for data analysis and visualization.</p>
-            <div style="margin-top: 12px;"><span class="skill-chip">Power BI</span><span class="skill-chip">Python</span><span class="skill-chip">Pandas</span></div>
+            <div class="project-icon"><i class="fas fa-truck"></i></div>
+            <h3>Supply Chain Last-Mile Delivery Risk</h3>
+            <p>Power BI dashboard + Python/SQL to analyze delivery delays, traffic, weather & driver performance. Reduced risks via actionable insights.</p>
+            <div><span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">Power BI</span></div>
+            <div class="project-links">
+              <a href="https://github.com/NaveenkumarKrishnamoorthi/Supply_Chain_Last_Mile_Delivery_Risk_Analyzer.git" target="_blank"><i class="fab fa-github"></i> repo</a>
+            </div>
           </div>
           <div class="project-card">
-            <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
-            <h3>Campus Placement Prediction</h3>
-            <p>Developed a predictive model to forecast student placement outcomes. Applied data preprocessing, feature engineering and ML algorithms using Python and Scikit-learn.</p>
-            <div><span class="skill-chip">Scikit-learn</span><span class="skill-chip">EDA</span><span class="skill-chip">Classification</span></div>
+            <div class="project-icon"><i class="fas fa-charging-station"></i></div>
+            <h3>Smart EV Charging Demand Analyzer</h3>
+            <p>Analytics dashboard to forecast EV charging demand, peak usage, holiday & weather trends using Python, SQL, Power BI.</p>
+            <div><span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">Power BI</span></div>
+            <div class="project-links">
+              <a href="https://github.com/NaveenkumarKrishnamoorthi/Short_Ev_Charging_Demand_Analyzer.git" target="_blank"><i class="fab fa-github"></i> repo</a>
+            </div>
           </div>
           <div class="project-card">
-            <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
-            <h3>Revenue Intelligence EDA</h3>
-            <p>Exploratory data analysis on customer churn and sales patterns using Matplotlib, Seaborn, delivering actionable insights for business growth.</p>
-            <div><span class="skill-chip">Data Viz</span><span class="skill-chip">NumPy</span><span class="skill-chip">Storytelling</span></div>
+            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>AI Cyber Threat Analyzer</h3>
+            <p>Cybersecurity dashboard monitoring login activity, failed attempts & attack trends. Built with Python, SQL, Tableau.</p>
+            <div><span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">Tableau</span></div>
+            <div class="project-links">
+              <a href="https://github.com/NaveenkumarKrishnamoorthi/AI_Cyber_Threat_Analyzer.git" target="_blank"><i class="fab fa-github"></i> repo</a>
+            </div>
           </div>
         </div>
       </section>
@@ -455,14 +561,38 @@
           <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
             <div style="flex: 1.5;">
               <h3><i class="fas fa-code"></i> Programming & analytics</h3>
-              <div><span class="skill-chip"><i class="fab fa-python"></i> Python</span><span class="skill-chip"><i class="fas fa-database"></i> SQL(MySQL)</span><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Data Cleaning</span><span class="skill-chip">Power BI</span><span class="skill-chip">Matplotlib</span><span class="skill-chip">Excel</span></div>
+              <div>
+                <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-chip"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-chip">Pandas</span>
+                <span class="skill-chip">NumPy</span>
+                <span class="skill-chip">Power BI</span>
+                <span class="skill-chip">Tableau</span>
+                <span class="skill-chip">Matplotlib</span>
+                <span class="skill-chip">Excel</span>
+              </div>
               <h3 style="margin-top: 1rem;"><i class="fas fa-brain"></i> Machine Learning</h3>
-              <div><span class="skill-chip">Supervised Learning</span><span class="skill-chip">Unsupervised</span><span class="skill-chip">Scikit-learn</span><span class="skill-chip">Model Evaluation</span></div>
+              <div>
+                <span class="skill-chip">Supervised</span>
+                <span class="skill-chip">Unsupervised</span>
+                <span class="skill-chip">Scikit-learn</span>
+                <span class="skill-chip">EDA</span>
+              </div>
             </div>
             <div style="flex: 1">
               <h3><i class="fas fa-toolbox"></i> Tools & soft skills</h3>
-              <div><span class="skill-chip">Git/GitHub</span><span class="skill-chip">Jupyter</span><span class="skill-chip">VS Code</span></div>
-              <div><span class="skill-chip">Analytical thinking</span><span class="skill-chip">Problem-solving</span><span class="skill-chip">Teamwork</span><span class="skill-chip">Quick learner</span></div>
+              <div>
+                <span class="skill-chip">Git/GitHub</span>
+                <span class="skill-chip">Jupyter</span>
+                <span class="skill-chip">VS Code</span>
+                <span class="skill-chip">Colab</span>
+              </div>
+              <div style="margin-top: 0.5rem;">
+                <span class="skill-chip">Analytical thinking</span>
+                <span class="skill-chip">Problem-solving</span>
+                <span class="skill-chip">Teamwork</span>
+                <span class="skill-chip">Quick learner</span>
+              </div>
             </div>
           </div>
         </div>
@@ -475,17 +605,27 @@
           <div class="card-dark" style="flex:1">
             <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #60a5fa;"></i>
             <h3 style="margin: 0.6rem 0;">M.Sc. Computer Science</h3>
-            <p>Thiruvalluvar Govt. Arts College (Periyar University) <br> <strong>2024 – 2026</strong> <br> Specialization: Data Analytics & ML</p>
+            <p>Thiruvalluvar Govt. Arts College (Periyar University) <br /> <strong>2024 – 2026</strong> <br /> 85.8%</p>
           </div>
           <div class="card-dark" style="flex:1">
             <i class="fas fa-university" style="font-size: 2rem; color: #60a5fa;"></i>
             <h3 style="margin: 0.6rem 0;">B.Sc. Computer Science</h3>
-            <p>Thiruvalluvar Govt. Arts College (Periyar University) <br> <strong>2021 – 2024</strong> <br> <strong>CGPA: 7.54</strong></p>
+            <p>Thiruvalluvar Govt. Arts College (Periyar University) <br /> <strong>2021 – 2024</strong> <br /> <strong>CGPA: 7.54</strong></p>
           </div>
         </div>
       </section>
 
-      <!-- personal -->
+      <!-- certifications & personal -->
+      <section>
+        <h2 class="section-title">📜 Certifications</h2>
+        <div class="card-dark">
+          <ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 1.2rem;">
+            <li><i class="fas fa-certificate" style="color:#3b82f6;"></i> Data Analyst Master Class – NoviTech R&D</li>
+            <li><i class="fas fa-certificate" style="color:#3b82f6;"></i> IBM SkillsBuild – Data Analytics & AI</li>
+          </ul>
+        </div>
+      </section>
+
       <section>
         <h2 class="section-title">✨ Beyond the code</h2>
         <div class="card-dark">
@@ -509,13 +649,13 @@
             <a href="tel:+919360799707" class="btn-primary" style="background: #1e40af;"><i class="fas fa-phone-alt"></i> +91 93607 99707</a>
             <a href="https://github.com/naveenkumarkrishnamoorthi" target="_blank" class="btn-primary" style="background: #0f172a; border:1px solid #3b82f6;"><i class="fab fa-github"></i> GitHub</a>
           </div>
-          <hr style="margin: 1.4rem 0; border-color: #1e293b;">
+          <hr style="margin: 1.4rem 0; border-color: #1e293b;" />
           <p><i class="fas fa-map-marker-alt"></i> Attayampatty, Salem, Tamil Nadu, India</p>
         </div>
       </section>
     </div>
     <footer>
-      <p>© 2026 Naveenkumar — M.Sc. Computer Science Portfolio </p>
+      <p>© 2026 Naveenkumar — M.Sc. Computer Science Portfolio</p>
       <p style="font-size: 0.75rem; margin-top: 6px;">Python · SQL · Power BI · ML — ready for the future of analytics</p>
     </footer>
   </main>
@@ -533,8 +673,10 @@
         }
       });
     });
-    // photo replacement hint
-    console.log("📸 Replace profile image: update the src attribute of #profilePhoto with your actual image path (e.g., 'myphoto.jpg')");
+
+    // small interactive: project card github link confirmation
+    console.log('🚀 Portfolio ready — Naveenkumar Data Analyst 2026');
+    // replace avatar if you have real photo: document.getElementById('profilePhoto').src = 'NK.webp';
   </script>
 </body>
 </html>
